@@ -5,6 +5,9 @@ const Vigenere = require('caesar-salad').Vigenere;
 export class CipherService {
     public encodeWord = (password: string, wordToEncode: string): IResponse => {
         try{
+            if (password.trim() === '' || wordToEncode.trim() === ''){
+                throw new Error('Empty field in request')
+            }
             const encodedWord = Vigenere.Cipher(password).crypt(wordToEncode)
             const response: IResponse = {
                 result: encodedWord,
@@ -23,6 +26,9 @@ export class CipherService {
 
     public decodeWord = (password: string, wordToDecode: string): IResponse => {
         try{
+            if (password.trim() === '' || wordToDecode.trim() === ''){
+                throw new Error('Empty field in request')
+            }
             const decodedWord = Vigenere.Decipher(password).crypt(wordToDecode)
             const response: IResponse = {
                 result: decodedWord,
