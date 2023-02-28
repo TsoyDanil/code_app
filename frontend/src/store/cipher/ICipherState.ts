@@ -5,5 +5,5 @@ import IResponse from "../../interfaces/IResponse";
 export default interface ICipherState{
     request: IRequest,
     response: IResponse,
-    
+    loadingCipher: boolean
 }
