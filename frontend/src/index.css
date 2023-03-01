@@ -5,7 +5,7 @@
   font-size: 30px;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #191919;
+  background-color: #01303f;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -16,6 +16,7 @@
 body{
   margin: 0;
   padding: 0;
+  color: #d4f0fc;
 }
 
 button{
