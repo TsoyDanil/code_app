@@ -1,4 +1,4 @@
-import {createSlice} from '@reduxjs/toolkit'
+import {createSlice, PayloadAction} from '@reduxjs/toolkit'
 import { cipherApi } from '../../api/cipherApi'
 import IRequest from '../../interfaces/IRequest'
 import { createAppAsyncThunk } from '../createAppAsyncThunk'
@@ -35,7 +35,18 @@ export const cipherSlice = createSlice({
         },
         loadingCipher: false
     } as ICipherState,
-    reducers:{},
+    reducers:{
+        changeRequestData(state, action: PayloadAction<{name: string, value: string}>){
+            try{
+                state.request = {
+                    ...state.request,
+                    [action.payload.name]: action.payload.value.toLowerCase()
+                }
+            } catch(err: unknown){
+                console.log(err)
+            }
+        }
+    },
     extraReducers:(builder) => {
         builder
         .addCase(encodeWord.rejected, (state) => {
@@ -46,6 +57,7 @@ export const cipherSlice = createSlice({
         })
         .addCase(encodeWord.fulfilled, (state, action) => {
             state.response = {...action.payload}
+            state.loadingCipher = false
         })
         .addCase(decodedWord.rejected, (state) => {
             state.loadingCipher = false
@@ -55,6 +67,11 @@ export const cipherSlice = createSlice({
         })
         .addCase(decodedWord.fulfilled, (state, action) => {
             state.response = {...action.payload}
+            state.loadingCipher = false
         })
     }
 })
+
+export const {
+    changeRequestData
+} = cipherSlice.actions
