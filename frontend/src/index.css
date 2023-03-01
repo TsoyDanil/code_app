@@ -1,12 +1,11 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'DotGothic16', sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
+  font-size: 30px;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  background-color: #191919;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -17,4 +16,28 @@
 body{
   margin: 0;
   padding: 0;
+}
+
+button{
+  border: 1px solid;
+  font-family: "DotGothic16", sans-serif;
+  font-weight: bolder;
+  font-size: 20px;
+  border-radius: 3px;
+  background-color: var(--light-button);
+  margin-bottom: 3px;
+  cursor: pointer;
+  width: 100%;
+  transition: 0.2s;
+  background: #89d6fb;
+  margin: 0 10px;
+}
+
+button:hover{
+  color: #89d6fb;
+  background-color: #242424;
+}
+
+h1{
+  margin: 5px 0;
 }
