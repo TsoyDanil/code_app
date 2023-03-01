@@ -4,8 +4,8 @@
         height: 48px;
         border-radius: 50%;
         position: absolute;
-        top: 80%;
-        left: 50%;
+        top: 46%;
+        left: 48%;
         transform: translate(-50%, -50%);
         animation: rotate 1s linear infinite
       }
